@@ -42,7 +42,7 @@ public class Engine {
                         default -> System.out.println("Выберите пункт меню из списка!");
                     }
                 } else {
-                    scanner.nextLine(); // считываем символ новой строки
+                    scanner.nextLine();
                     System.out.println("Выберите пункт меню из списка!");
                 }
             }
@@ -87,8 +87,7 @@ public class Engine {
             try {
                 System.out.print("Введите дату выполнения задачи (в формате dd.MM.yyyy): ");
                 String dateStr = scanner.nextLine().trim();
-                return LocalDate.parse(dateStr,
-                        DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+                return LocalDate.parse(dateStr, DateTimeFormatter.ofPattern("dd.MM.yyyy"));
             } catch (DateTimeParseException e) {
                 System.out.println("Некорректный формат даты! Попробуйте снова.");
             }

@@ -3,6 +3,7 @@ package ru.oleg.taskplanner.model;
 import ru.oleg.taskplanner.model.enums.TaskType;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Task {
@@ -41,8 +42,8 @@ public class Task {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", type=" + type +
-                ", dateTime=" + dateTime +
+                ", type=" + type.getValue() +
+                ", dateTime=" + dateTime.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")) +
                 ", taskRepeater=" + repeatable.getStringRepresentation() +
                 '}';
     }
